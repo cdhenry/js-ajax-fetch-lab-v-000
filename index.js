@@ -4,7 +4,7 @@ function getIssues() {
     headers: {
       Authorization: `token ${getToken()}`
     }
-  }).then(res => res.json()).then(showResults);
+  }).then(res => res.json()).then(showIssues);
 }
 
 function showIssues(json) {
