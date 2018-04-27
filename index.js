@@ -1,10 +1,13 @@
 function getIssues() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   fetch(`https://api.github.com/repos/${repo}/issues`, {
-    headers: {
-      Authorization: `token ${getToken()}`
-    }
-  }).then(res => res.json()).then(showIssues);
+  })
+    .then(res => res.json())
+    .then(data => {
+      for (let i = 0; i < data.length; i++){
+        displayIssue(new Issue(data[i]));
+      }
+    });
 }
 
 function showIssues(json) {
