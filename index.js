@@ -1,18 +1,18 @@
-// function getIssues() {
-//   // fetch(`https://api.github.com/repos/${repo}/forks`, {
-//   //   method: 'post',
-//   //   headers: {
-//   //     Authorization: `token ${getToken()}`
-//   //   }
-//   // }).then(res => res.json()).then(showResults);
-// }
+function getIssues() {
+  const repo = 'learn-co-curriculum/javascript-fetch-lab'
+  fetch(`https://api.github.com/repos/${repo}/issues`, {
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  }).then(res => res.json()).then(showResults);
+}
 
 function showIssues(json) {
   $('#issues').append(`<h4>Issues</h4><a href="${json.html_url}">${json.title}</a>`);
 }
 
 function createIssue() {
-  const repo = 'cdhenry/javascript-fetch-lab'
+  const repo = 'learn-co-curriculum/javascript-fetch-lab'
   const issueTitle = document.getElementById('title').value
   const issueBody = document.getElementById('body').value
   const postData = { title: issueTitle, body: issueBody }
