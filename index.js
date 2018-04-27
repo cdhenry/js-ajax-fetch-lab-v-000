@@ -1,5 +1,5 @@
 function getIssues() {
-  const repo = 'learn-co-curriculum/javascript-fetch-lab'
+  const repo = 'cdhenry/javascript-fetch-lab'
   fetch(`https://api.github.com/repos/${repo}/issues`, {
   })
     .then(res => res.json())
@@ -15,7 +15,7 @@ function showIssues(json) {
 }
 
 function createIssue() {
-  const repo = 'learn-co-curriculum/javascript-fetch-lab'
+  const repo = 'cdhenry/javascript-fetch-lab'
   const issueTitle = document.getElementById('title').value
   const issueBody = document.getElementById('body').value
   const postData = { title: issueTitle, body: issueBody }
